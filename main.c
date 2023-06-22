@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include "monty.h"
 
+#define MAX_LINE_LENGTH 1000
+
 /**
  * main - Entry point of the program
  * @argc: Number of command-line arguments
@@ -12,6 +14,8 @@
 int main(int argc, char *argv[])
 {
 	FILE *file;
+	char line[MAX_LINE_LENGTH];
+	size_t len = MAX_LINE_LENGTH;
 
 	if (argc != 2)
 	{
@@ -27,7 +31,10 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
-	/* Read the file, parse instructions, and execute opcode functions */
+	while (fgets(line, len, file) != NULL)
+	{
+		/* TODO: Parse the line and execute the opcode functions */
+	}
 
 	fclose(file);
 

@@ -1,4 +1,5 @@
 #include "monty.h"
+#include <stdio.h>
 
 /**
  * pall - Prints all the values on the stack, starting from the top.
@@ -7,9 +8,12 @@
  */
 void pall(stack_t **stack)
 {
-	if (stack == NULL || *stack == NULL) /* Check if the stack is empty */
-		return;
+	stack_t *current = *stack;
 
-	/* Traverse the stack and print the value of each node */
+	while (current != NULL)
+	{
+		printf("%d\n", current->n);
+		current = current->next;
+	}
 }
 
